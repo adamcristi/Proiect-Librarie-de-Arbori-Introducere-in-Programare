@@ -29,10 +29,6 @@ template < typename tip >
 void destroyAB(nodAB< tip >*& root)
 {
     parcurgeABSDR(root,deleteNod);
-    /*if(root->st!=NULL) destroyAB(root->st);
-    if(root->dr!=NULL) destroyAB(root->dr);
-    delete(root);
-    root=NULL;*/
 }
 
 
@@ -131,19 +127,6 @@ bool esteABAproapeComplet(nodAB< tip >* radacina)
     }
     else return false;
 }
-
-// A.
-// functie care verifica daca un arbore binar este full ( full binary tree )
-/*template < typename tip >
-bool esteABFull(nodAB< tip >* radacina)
-{
-    if( !esteABNull(radacina) ){
-        if( !esteABNull(radacina->st) && !esteABNull(radacina->dr) ) return esteABFull(radacina->st) && esteABFull(radacina->dr);
-         else if( esteABFrunza(radacina) ) return true;
-               else return false;
-    }
-    else return false;
-}*/
 
 // A.
 // functie care verifica daca un arbore binar este degenerat ( degenerate tree )
@@ -296,68 +279,6 @@ void deleteAllNodesWithSameValueAB(nodAB< tip >*& radacina, nodAB< tip >*& tata,
             if( nodCurent->st==NULL || nodCurent->dr==NULL )
                     deleteFromAB(radacina,tata,nodCurent);
             }
-            /*if(tata==NULL && radacina==nodactual){
-                if( nodactual->st==NULL || nodactual->dr==NULL ){
-                    if( nodactual->st!=NULL ){
-                        nodAB< tip >* nodaux=nodactual;
-                        radacina=nodactual->st;
-                        delete[] nodaux;
-                        //nodactual=NULL;
-                        //nodactual=radacina;
-                    }
-                    else if( nodactual->dr!=NULL ){
-                            nodAB< tip >* nodaux=nodactual;
-                            radacina=nodactual->dr;
-                            delete[] nodaux;
-                            //nodactual=NULL;
-                            //nodactual=radacina;
-                        }
-                        else{
-                             radacina=NULL;
-                             delete[] nodactual;
-                             //nodactual=NULL;
-                            }
-                }
-            }
-            else if( nodactual->st==NULL || nodactual->dr==NULL ){
-                    if( nodactual->st!=NULL ){
-                        if( tata->dr==nodactual ){
-                            nodAB< tip >* nodaux=nodactual;
-                            tata->dr=nodactual->st;
-                            delete[] nodaux;
-                            //nodactual=NULL;
-                            //nodactual=tata;
-                        }
-                        else{
-                             nodAB< tip >* nodaux=nodactual;
-                             tata->st=nodactual->st;
-                             delete[] nodaux;
-                            }
-                    }
-                    else if( nodactual->dr!=NULL ){
-                            if( tata->dr==nodactual ){
-                                nodAB< tip >* nodaux=nodactual;
-                                tata->dr=nodactual->dr;
-                                delete[] nodaux;
-                            }
-                            else{
-                                 nodAB< tip >* nodaux=nodactual;
-                                 tata->st=nodactual->dr;
-                                 delete[] nodaux;
-                                }
-                        }
-                        else{
-                             if( tata->dr==nodactual ){
-                                tata->dr=NULL;
-                                delete[] nodactual;
-                             }
-                             else{
-                                  tata->st=NULL;
-                                  delete[] nodactual;
-                                 }
-                            }
-                }
-        }*/
     }
 }
 
