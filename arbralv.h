@@ -97,65 +97,7 @@ bool esteVectorABAproapeComplet(vectorAB< tip > arbore)
         if( !arbore.exista[i] ) return false;
 
     return true;
-
-    /*short numarFrunze = numaraFrunzeVectorAB(arbore,0);
-    short nrNoduriMaximUltimNivel = 1;
-    while( arbore.limitaVector > nrNoduriMaximUltimNivel ){
-        nrNoduriMaximUltimNivel= 2*nrNoduriMaximUltimNivel;
-    }
-    nrNoduriMaximUltimNivel/=2;
-
-   //if( numarFrunze != arbore.limitaVector-nrNoduriMaximUltimNivel+1 ) return false;
-
-    for(int i=nrNoduriMaximUltimNivel-1; i < arbore.limitaVector; ++i){
-        if( !arbore.exista[i] ) return false;
-    }*/
-
-
-    /*short numarFrunze=0;
-    coadaAB< tip > coada;
-    coada=coadaABNull< tip >();
-
-    coada.elemente[coada.primulElement]=0;
-    while( coada.primulElement <= coada.ultimulElement ){
-        tip pozitieCurenta=coada.elemente[coada.primulElement++];
-        bool frateStang=false;
-        if( arbore.exista[2*pozitieCurenta+1] ){
-            if( !esteVectorABFrunza(arbore,2*pozitieCurenta+1) ) coada.elemente[++coada.ultimulElement]=2*pozitieCurenta+1;
-             else{
-                   if( inaltimeVectorAB(arbore)==adancimeNodVectorAB(arbore,2*pozitieCurenta+1) ){
-                      if( numarFrunze%2==0 ){
-                        numarFrunze++;
-                        frateStang=true;
-                      }
-                      else return false;
-                   }
-                   else return false;
-                 }
-        }
-     if( arbore.exista[2*pozitieCurenta+2] ){
-        if( !esteVectorABFrunza(arbore,2*pozitieCurenta+2) ) coada.elemente[++coada.ultimulElement]=2*pozitieCurenta+2;
-         else{
-              if( inaltimeVectorAB(arbore)==adancimeNodVectorAB(arbore,2*pozitieCurenta+2) ){
-                if( frateStang && numarFrunze%2!=0 ) numarFrunze++;
-                 else return false;
-              }
-              else return false;
-             }
-     }
-    }
-    return true;*/
 }
-
-/*template < typename tip >
-bool esteVectorABFull(vectorAB< tip > arbore, short pozitie)
-{
-    if( esteVectorABNull(arbore) || !pozitieVectorABCorecta(arbore,pozitie) ) return false;
-
-    if( esteVectorABFrunza(arbore,pozitie) ) return true;
-    if( arbore.exista[2*pozitie+1] && arbore.exista[2*pozitie+2] ) return esteVectorABFull(arbore,2*pozitie+1) && esteVectorABFull(arbore,2*pozitie+2);
-     else return false;
-}*/
 
 // A.
 // functie care verifica daca un arbore binar este degenerat ( degenerate tree )
@@ -215,12 +157,6 @@ vectorAB< tip > deleteFromVectorAB(vectorAB< tip >& arbore,short pozitie)
         arbore.elemente[pozitie] = arbore.elemente[arbore.limitaVector-1];
     }
     while( !arbore.exista[arbore.limitaVector-1] )arbore.limitaVector--;
-
-    /*if( arbore.exista[2*pozitie+1] && arbore.pozitie[2*pozitie+2] ) return arbore;
-    if( esteVectorABFrunza(pozitie) ) arbore.exista[pozitie]=false;
-     else{
-          if()
-         }*/
 
     return arbore;
 }
