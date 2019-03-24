@@ -140,20 +140,6 @@ void interschimba(tip &x, tip &y)
     y = aux;
 }
 
-
-
-// A.
-// Functie pentru a calcula a la puterea b
-// Folosita in arbralv.h
-/*template < typename tip >
-tip putere(tip a,tip b)
-{
-   if(b==0) return 1;
-    else if (b==1) return a;
-          else if(b%2==0) return putere< short >(a,b/2)*putere< short >(a,b/2);
-                else return a*putere< short >(a,b/2)*putere< short >(a,b/2);
-}*/
-
 #endif // ARBRALS_H
 
 
